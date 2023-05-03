@@ -76,7 +76,21 @@ namespace Ejercicio2
 
                         }
                         break;
-                 }
+                //paso3: Mostrar la cantidad de hombres (mayores de 17 años)
+                    case "1":
+                        int hombresMayores = 0;
+                        foreach (var record in records)
+                        {
+                            if (record.Sex == "0" && !string.IsNullOrEmpty(record.Age) && float.Parse(record.Age) > 17)
+                            {
+                                hombresMayores++;
+                            }
+                        }
+                        Console.WriteLine($"La cantidad de hombres mayores de 17 años es: {hombresMayores}");
+                        break;
+                }
+
+
 
             }
         }
