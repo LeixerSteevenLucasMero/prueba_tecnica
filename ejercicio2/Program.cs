@@ -130,6 +130,29 @@ namespace Ejercicio2
                         }
                         Console.WriteLine($"La cantidad de niñas menores de 13 años es: {ninas}");
                         break;
+                //paso7:Mostrar la cantidad de adolescentes hombre y mujeres (entre 13 y 17 años).
+                    case "5":
+                        int adolescentes = 0;
+                        foreach (var record in records)
+                        {
+                            if (!string.IsNullOrEmpty(record.Age) && float.Parse(record.Age) <= 17)
+
+                            {
+                                if (!string.IsNullOrEmpty(record.Age) && float.Parse(record.Age) >= 13)
+                                {
+                                    if (record.Sex == "0" || record.Sex == "1")
+                                    {
+                                        adolescentes++;
+                                    }
+                                }
+                            }
+                        }
+                        Console.WriteLine($"La cantidad de adolescentes entre 13 y 17 años es: {adolescentes}");
+                        break;
+                 //salir
+                    case "6":
+                        Console.WriteLine("Saliendo del programa...");
+                        return;
 
 
 
