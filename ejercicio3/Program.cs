@@ -69,7 +69,6 @@ namespace ejercicio3
                         break;
                     case 6:
 
-
                         break;
                     case 7:
 
@@ -86,5 +85,42 @@ namespace ejercicio3
                 Console.WriteLine();
 
             } while (opcion != 9);
-    }
+        }
+        static void MostrarVector(int[] vector)
+        {
+            for (int i = 0; i < VECTOR_SIZE; i++)
+            {
+                Console.Write(vector[i] + " ");
+            }
+            Console.WriteLine();
+        }
+
+        static void MostrarMatriz(int[,] matriz)
+        {
+            for (int i = 0; i < MATRIX_SIZE; i++)
+            {
+                for (int j = 0; j < MATRIX_SIZE; j++)
+                {
+                    Console.Write(matriz[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        //paso3: Aplicar un algoritmo de ordenamiento en el vector y ordenarlo de forma descendente
+        static void OrdenarVector(int[] vector)
+        {
+            for (int i = 0; i < VECTOR_SIZE - 1; i++)
+            {
+                for (int j = i + 1; j < VECTOR_SIZE; j++)
+                {
+                    if (vector[i] < vector[j])
+                    {
+                        int temp = vector[i];
+                        vector[i] = vector[j];
+                        vector[j] = temp;
+                    }
+                }
+            }
+        }
 }
