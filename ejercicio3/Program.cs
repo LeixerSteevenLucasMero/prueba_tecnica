@@ -53,33 +53,115 @@ namespace ejercicio3
                 switch (opcion)
                 {
                     case 1:
-
+                        try
+                        {
+                        MostrarVector(vector);
+                        }
+                        catch (FormatException)
+                        {
+                            Console.WriteLine("Error: la opción debe ser un número entero.");
+                        }
                         break;
                     case 2:
+                        try
+                        {
+                        MostrarMatriz(matriz);
 
+                        }
+                        catch (FormatException)
+                        {
+                            Console.WriteLine("Error: la opción debe ser un número entero.");
+
+                        }
                         break;
                     case 3:
 
+                        try
+                        {
+                        OrdenarVector(vector);
+                        Console.WriteLine("Vector ordenado de forma descendente:");
+                        MostrarVector(vector);
+                        }
+                        catch (FormatException)
+                        {
+                            Console.WriteLine("Error: la opción debe ser un número entero.");
+                        }
                         break;
                     case 4:
+                        try
+                        {
+                        Console.WriteLine("Suma total del vector: {0}", SumaTotalVector(vector));
 
+                        }
+                        catch (FormatException)
+                        {
+                            Console.WriteLine("Error: la opción debe ser un número entero.");
+
+                        }
                         break;
                     case 5:
-
+                        try
+                        {
+                        Console.WriteLine("Suma total de la matriz: {0}", SumaTotalMatriz(matriz));
+                        }
+                        catch (FormatException)
+                        {
+                            Console.WriteLine("Error: la opción debe ser un número entero.");
+                        }
                         break;
                     case 6:
 
+                        try
+                        {
+                        Console.WriteLine("Números primos del vector:");
+                        ImprimirPrimos(vector);
+                        }
+                        catch (FormatException)
+                        {
+                            Console.WriteLine("Error: la opción debe ser un número entero.");
+
+                        }
                         break;
                     case 7:
+                        try
+                        {
+                        Console.WriteLine("Números impares de la matriz:");
+                        ImprimirImpares(matriz);
 
+                        }
+                        catch (FormatException)
+                        {
+                            Console.WriteLine("Error: la opción debe ser un número entero.");
+
+                        }
                         break;
                     case 8:
+                        try
+                        {
+                        OrdenarMatriz(matriz);
+                        Console.WriteLine("Matriz ordenada de izquierda a derecha de forma ascendente:");
+                        MostrarMatriz(matriz);
 
+                        }
+                        catch (FormatException)
+                        {
+                            Console.WriteLine("Error: la opción debe ser un número entero.");
+
+                        }
                         break;
                     case 9:
+                        try
+                        {
+                        Console.WriteLine("Saliendo del programa...");
 
+                        }
+                        catch (FormatException)
+                        {
+                            Console.WriteLine("Error: la opción debe ser un número entero.");
+                        }
                         break;
                     default:
+                        Console.WriteLine("Opción inválida, intente de nuevo.");
                         break;
                 }
                 Console.WriteLine();
@@ -189,5 +271,27 @@ namespace ejercicio3
                 Console.WriteLine();
             }
         }
+
+        //paso8:Ordenar la matriz de izquierda a derecha de forma ascendente
+
+        static void OrdenarMatriz(int[,] matriz)
+        {
+            for (int i = 0; i < MATRIX_SIZE; i++)
+            {
+                for (int j = 0; j < MATRIX_SIZE - 1; j++)
+                {
+                    for (int k = j + 1; k < MATRIX_SIZE; k++)
+                    {
+                        if (matriz[i, j] > matriz[i, k])
+                        {
+                            int temp = matriz[i, j];
+                            matriz[i, j] = matriz[i, k];
+                            matriz[i, k] = temp;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
         
