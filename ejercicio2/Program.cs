@@ -55,7 +55,6 @@ namespace Ejercicio2
             while (!exit)
             {
                 //pas1:Realizar un menú
-                Console.WriteLine("Seleccione una opción:");
 
                 Console.WriteLine("Seleccione una opción:");
                 Console.WriteLine("0. Mostrar lista de datos");
@@ -65,6 +64,19 @@ namespace Ejercicio2
                 Console.WriteLine("4. Mostrar cantidad de niñas menores de 13 años");
                 Console.WriteLine("5. Mostrar cantidad de adolescentes (entre 13 y 17 años)");
                 Console.WriteLine("6. Salir");
+               
+                //paso2:lista de datos
+                string option = Console.ReadLine();
+                switch (option)
+                {
+                    case "0":
+                        foreach (var record in records)
+                        {
+                            Console.WriteLine($"Passengerid: {record.Passengerid}   - Survived {record.urvived}   - Pclass   {record.Pclass}  - Sex  {record.Sex} - Age  {record.Age} - SibSp  {record.SibSp} - Parch  {record.Parch} - Fare {record.Fare} - Embarked {record.Embarked}");
+
+                        }
+                        break;
+                 }
 
             }
         }
