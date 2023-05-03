@@ -115,6 +115,21 @@ namespace Ejercicio2
                         }
                         Console.WriteLine($"La cantidad de niños menores de 13 años es: {ninos}");
                         break;
+                //paso6: Mostrar la cantidad de niñas (menores de 13 años).
+                    case "4":
+                        int ninas = 0;
+                        foreach (var record in records)
+                        {
+                            if (!string.IsNullOrEmpty(record.Age) && float.Parse(record.Age) >= 13)
+                            {
+                                if (record.Sex == "1")
+                                {
+                                    ninas++;
+                                }
+                            }
+                        }
+                        Console.WriteLine($"La cantidad de niñas menores de 13 años es: {ninas}");
+                        break;
 
 
 
