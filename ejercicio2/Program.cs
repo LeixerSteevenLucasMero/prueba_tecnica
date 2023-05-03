@@ -1,0 +1,72 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using CsvHelper;
+
+
+namespace Ejercicio2
+{
+
+    public class RegistroCN
+    {
+        public int Passengerid { get; set; }
+        public int urvived { get; set; }
+        public int Pclass { get; set; }
+        public string Sex { get; set; }
+        public String Age { get; set; }
+        public int SibSp { get; set; }
+        public int Parch { get; set; }
+        public double Fare { get; set; }
+        public string Embarked { get; set; }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var path = @"C:\Users\Leixer Lucas Mero\source\repos\ejercicio2\ejercicio2\csv\train_and_test2.csv";
+            var records = new List<RegistroCN>();
+
+            using (var reader = new StreamReader(path))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+                csv.Read();
+                csv.ReadHeader();
+                while (csv.Read())
+                {
+                    var record = new RegistroCN
+                    {
+                        Passengerid = csv.GetField<int>("Passengerid"),
+                        urvived = csv.GetField<int>("2urvived"),
+                        Pclass = csv.GetField<int>("Pclass"),
+                        Sex = csv.GetField("Sex"),
+                        Age = csv.GetField("Age"),
+                        SibSp = csv.GetField<int>("sibsp"),
+                        Parch = csv.GetField<int>("Parch"),
+                        Fare = csv.GetField<double>("Fare"),
+                        Embarked = csv.GetField("Embarked")
+                    };
+                    records.Add(record);
+                }
+            }
+
+            bool exit = false;
+            while (!exit)
+            {
+                //pas1:Realizar un menú
+                Console.WriteLine("Seleccione una opción:");
+
+                Console.WriteLine("Seleccione una opción:");
+                Console.WriteLine("0. Mostrar lista de datos");
+                Console.WriteLine("1. Mostrar cantidad de hombres mayores de 17 años");
+                Console.WriteLine("2. Mostrar cantidad de mujeres mayores de 17 años");
+                Console.WriteLine("3. Mostrar cantidad de niños menores de 13 años");
+                Console.WriteLine("4. Mostrar cantidad de niñas menores de 13 años");
+                Console.WriteLine("5. Mostrar cantidad de adolescentes (entre 13 y 17 años)");
+                Console.WriteLine("6. Salir");
+
+            }
+        }
+    }
+}
