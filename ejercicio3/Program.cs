@@ -31,5 +31,60 @@ namespace ejercicio3
                 opcion = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine();
 
+                //paso2: Generar un vector de 50 posiciones y una matriz de 5x5
+
+                int[] vector = new int[VECTOR_SIZE];
+                int[,] matriz = new int[MATRIX_SIZE, MATRIX_SIZE];
+                Random random = new Random();
+
+                for (int i = 0; i < VECTOR_SIZE; i++)
+                {
+                    vector[i] = random.Next(1, 501);
+                }
+
+                for (int i = 0; i < MATRIX_SIZE; i++)
+                {
+                    for (int j = 0; j < MATRIX_SIZE; j++)
+                    {
+                        matriz[i, j] = random.Next(1, 501);
+                    }
+                }
+
+                switch (opcion)
+                {
+                    case 1:
+
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+
+                        break;
+                    case 4:
+
+                        break;
+                    case 5:
+
+                        break;
+                    case 6:
+
+
+                        break;
+                    case 7:
+
+                        break;
+                    case 8:
+
+                        break;
+                    case 9:
+
+                        break;
+                    default:
+                        break;
+                }
+                Console.WriteLine();
+
+            } while (opcion != 9);
     }
 }
