@@ -88,6 +88,19 @@ namespace Ejercicio2
                         }
                         Console.WriteLine($"La cantidad de hombres mayores de 17 años es: {hombresMayores}");
                         break;
+                //paso4: Mostrar la cantidad de mujeres (mayores de 17 años)
+                    case "2":
+                        int mujeresMayores = 0;
+                        foreach (var record in records)
+                        {
+                            if (record.Sex == "1" && !string.IsNullOrEmpty(record.Age) && float.Parse(record.Age) > 17)
+                            {
+                                mujeresMayores++;
+                            }
+                        }
+                        Console.WriteLine($"La cantidad de mujeres mayores de 17 años es: {mujeresMayores}");
+                        break;
+
                 }
 
 
