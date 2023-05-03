@@ -123,4 +123,16 @@ namespace ejercicio3
                 }
             }
         }
+        //paso4:Calcular la suma total del vector
+        static int SumaTotalVector(int[] vector)
+        {
+            int suma = 0;
+            for (int i = 0; i < VECTOR_SIZE; i++)
+            {
+                suma += vector[i];
+            }
+            return suma;
+        }
+
+
 }
