@@ -134,5 +134,18 @@ namespace ejercicio3
             return suma;
         }
 
+        //paso5:Calcular la suma total de la matriz.
+        static int SumaTotalMatriz(int[,] matriz)
+        {
+            int suma = 0;
+            for (int i = 0; i < MATRIX_SIZE; i++)
+            {
+                for (int j = 0; j < MATRIX_SIZE; j++)
+                {
+                    suma += matriz[i, j];
+                }
+            }
+            return suma;
+        }
 
 }
