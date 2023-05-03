@@ -148,7 +148,6 @@ namespace ejercicio3
             return suma;
         }
 
-        //paso6:Imprimir los números primos del vector y la posición
 
         static bool EsPrimo(int numero)
         {
@@ -162,4 +161,33 @@ namespace ejercicio3
             }
             return true;
         }
+        //paso6:Imprimir los números primos del vector y la posición
+
+        static void ImprimirPrimos(int[] vector)
+        {
+            for (int i = 0; i < VECTOR_SIZE; i++)
+            {
+                if (EsPrimo(vector[i]))
+                {
+                    Console.WriteLine("Posición {0}: {1}", i, vector[i]);
+                }
+            }
+        }
+
+        //paso7:Imprimir los números impares de la matriz.
+        static void ImprimirImpares(int[,] matriz)
+        {
+            for (int i = 0; i < MATRIX_SIZE; i++)
+            {
+                for (int j = 0; j < MATRIX_SIZE; j++)
+                {
+                    if (matriz[i, j] % 2 != 0)
+                    {
+                        Console.Write(matriz[i, j] + " ");
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
 }
+        
